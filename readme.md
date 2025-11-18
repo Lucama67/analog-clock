@@ -1,3 +1,3 @@
 # Analog Clock Project
 
-Bei diesem Projekt handelt es sich um eine responsive analoge Uhr, die mit HTML, CSS und JavaScript erstellt wurde.
+This project is a responsive analog clock created using HTML, CSS, and JavaScript.
