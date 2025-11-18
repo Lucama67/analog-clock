@@ -1,6 +1,91 @@
 /* 
-  Analog Clock Stylesheet
-  Responsive layout, modern CSS
-  Author: <Dein Name>
-  Date: <Datum>
+   Author: Luca Maag
+   Beschreibung: Analoge Uhr,
+   Datum von änderung: 18.11.2025
 */
+
+/* Seite zentriert */
+/* Seite zentrieren */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: #e6e6e6;
+  font-family: Arial, sans-serif;
+}
+
+/* Uhr-Container */
+.clock {
+  width: 300px;
+  height: 300px;
+  border: 12px solid #222;
+  border-radius: 50%;
+  position: relative;
+  background: white;
+  box-shadow: 0 0 25px rgba(0,0,0,0.25);
+}
+
+/* Markierungen 12-3-6-9 */
+.marking {
+  position: absolute;
+  width: 5px;
+  height: 28px;
+  background: #222;
+  top: 0;
+  left: 50%;
+  transform-origin: center 150px;  /* Perfekter Radius */
+}
+
+/* Positionen */
+.marking-one   { transform: rotate(0deg); }
+.marking-two   { transform: rotate(90deg); }
+.marking-three { transform: rotate(180deg); }
+.marking-four  { transform: rotate(270deg); }
+
+
+/* Alle Zeiger: Starten horizontal nach rechts */
+.hand {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: 0% 50%;     /* Drehpunkt am inneren Ende */
+  transform: rotate(0deg);      /* WICHTIG: Startwinkel fixen */
+  transition: transform 0.05s linear;
+  border-radius: 4px;
+}
+
+/* Stundenzeiger */
+.hour-hand {
+  width: 35%;
+  height: 6px;
+  background: #000;
+}
+
+/* Minutenzeiger */
+.min-hand {
+  width: 45%;
+  height: 4px;
+  background: #000;
+}
+
+/* Sekundenzeiger */
+.second-hand {
+  width: 48%;
+  height: 2px;
+  background: crimson;
+}
+
+/* Mittelpunkt */
+.clock::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: #222;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
